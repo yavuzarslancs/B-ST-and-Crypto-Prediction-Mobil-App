@@ -10,7 +10,7 @@ const CryptoScreen = ({ navigation }) => {
     console.log("Predict butonuna basıldı");
     try {
       const fullCryptoSymbol = `${cryptoSymbol}-USD`;
-      const response = await axios.post('http://192.168.182.1:5000/predict', { symbol: fullCryptoSymbol, is_crypto: true });
+      const response = await axios.post('http://YOUR IP KEY/predict', { symbol: fullCryptoSymbol, is_crypto: true });
       console.log("API'den gelen yanıt: ", response.data);
       setPredictedPrice(response.data.predicted_price);
     } catch (error) {
