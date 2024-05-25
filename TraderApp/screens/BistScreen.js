@@ -11,7 +11,7 @@ const BistScreen = ({ navigation }) => {
     console.log("Predict butonuna basıldı");
     try {
       const fullStockSymbol = `${stockSymbol}.IS`;
-      const response = await axios.post('http://192.168.182.1:5000/predict', { symbol: fullStockSymbol, is_crypto: false });
+      const response = await axios.post('http://"Your IP KEY"/predict', { symbol: fullStockSymbol, is_crypto: false });
       console.log("API'den gelen yanıt: ", response.data);
       setPredictedPrice(response.data.predicted_price);
       setPredictionDate(response.data.date);
