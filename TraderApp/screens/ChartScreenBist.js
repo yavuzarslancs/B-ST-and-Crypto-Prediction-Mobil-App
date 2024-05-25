@@ -19,7 +19,7 @@ const ChartBist = ({ route }) => {
 
   const fetchFullChartData = async () => {
     try {
-      const response = await axios.post('http://192.168.182.1:5000/plot_chart_interactive', { crypto_symbol: symbol });
+      const response = await axios.post('http://"YOUR IP KEY"/plot_chart_interactive', { crypto_symbol: symbol });
       const data = response.data;
       const formattedData = [
         { x: data.dates, y: data.prices, type: 'scatter', mode: 'lines', name: 'Kapanış Fiyatları' }
@@ -33,7 +33,7 @@ const ChartBist = ({ route }) => {
 
   const fetchLast200DaysChartData = async () => {
     try {
-      const response = await axios.post('http://192.168.182.1:5000/plot_moving_averages', { crypto_symbol: symbol });
+      const response = await axios.post('http://"YOUR IP KEY"/plot_moving_averages', { crypto_symbol: symbol });
       const data = response.data;
       const today = new Date();
       const startDate = new Date(today);
